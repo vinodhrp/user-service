@@ -11,7 +11,7 @@ public class UserServiceApplication {
 	public static Logger logger = LoggerFactory.getLogger(UserServiceApplication.class);
 
 	public static void main(String[] args) {
-		logger.info("===> User Service Application Invoked");
+		logger.info("===> User Service Application Invoked......");
 		SpringApplication.run(UserServiceApplication.class, args);
 	}
 

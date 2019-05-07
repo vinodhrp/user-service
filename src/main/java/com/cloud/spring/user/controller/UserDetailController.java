@@ -22,9 +22,10 @@ import com.cloud.spring.user.util.CustomErrorType;
 import com.cloud.spring.user.util.SuccessMessage;
 
 @RestController
-@RequestMapping("user-service")
 @CrossOrigin
+@RequestMapping("user-service")
 public class UserDetailController {
+	
 
 	public static Logger logger = LoggerFactory.getLogger(UserDetailController.class);
 	@Autowired

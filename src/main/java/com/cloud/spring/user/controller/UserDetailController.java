@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +19,11 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.cloud.spring.user.entity.UserDetail;
 import com.cloud.spring.user.service.UserDetailService;
 import com.cloud.spring.user.util.CustomErrorType;
+import com.cloud.spring.user.util.SuccessMessage;
 
 @RestController
 @RequestMapping("user-service")
+@CrossOrigin
 public class UserDetailController {
 
 	public static Logger logger = LoggerFactory.getLogger(UserDetailController.class);
@@ -85,7 +88,8 @@ public class UserDetailController {
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setLocation(ucBuilder.path("/user-service/fetchuser/{id}").buildAndExpand(user.getUserId()).toUri());
-		return new ResponseEntity<String>("User Successfully Created/Updated : " +headers.getLocation(),headers, HttpStatus.CREATED);
+		return new ResponseEntity<SuccessMessage>(new SuccessMessage("User with id " + user.getUserId() + " Created"),
+				HttpStatus.CREATED);
 	}
 
 }

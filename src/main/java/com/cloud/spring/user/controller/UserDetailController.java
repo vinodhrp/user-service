@@ -31,7 +31,7 @@ public class UserDetailController {
 	@Autowired
 	private UserDetailService userDetailService;
 
-	@RequestMapping(value = "/fetchusers/", method = RequestMethod.GET)
+	@RequestMapping(value = "/fetchall", method = RequestMethod.GET)
 	public ResponseEntity<List<UserDetail>> listAllUsers() {
 		List<UserDetail> users = userDetailService.findAllUsers();
 		if (users.isEmpty()) {
@@ -72,10 +72,18 @@ public class UserDetailController {
 		userDetailService.deleteUserById(id);
 		return new ResponseEntity<String>("User Deleteted Successfully",HttpStatus.NO_CONTENT);
 	}
+	
+	
+	@RequestMapping(value = "/deleteall", method = RequestMethod.DELETE)
+	public ResponseEntity<?> deleteAllUser() {
+		logger.info("Fetching & Deleting User");
+		userDetailService.deleteAllUser();
+		return new ResponseEntity<CustomErrorType>(new CustomErrorType("Deleted Successfully....."),HttpStatus.OK);
+	}
 
 	// -------------------Create a User-------------------------------------------
 
-	@RequestMapping(value = "/saveuser/", method = RequestMethod.POST)
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public ResponseEntity<?> createUser(@RequestBody UserDetail user, UriComponentsBuilder ucBuilder) {
 		logger.info("Creating User : {}", user);
 

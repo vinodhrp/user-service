@@ -39,6 +39,11 @@ public class UserDetailService {
 		userDetailRepository.delete(user);
 	}
 
+	
+	public void deleteAllUser() {
+		userDetailRepository.deleteAll();
+	}
+	
 	public boolean isUserExist(UserDetail user) {
 
 		boolean isUserAvail = false;

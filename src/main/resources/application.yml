@@ -1,12 +1,12 @@
 ---   
-spring:
-  profiles: cloud-register-io
-eureka:
-  instance:
-    nonSecurePort: 80
-    hostname: ${vcap.application.uris[0]}
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: ${vcap.services.eureka.credentials.url}
+#spring:
+  #profiles: cloud-register-io
+#eureka:
+  #instance:
+    #nonSecurePort: 80
+    #hostname: ${vcap.application.uris[0]}
+  #client:
+    #register-with-eureka: true
+    #fetch-registry: true
+    #service-url:
+      #defaultZone: ${vcap.services.eureka.credentials.url}

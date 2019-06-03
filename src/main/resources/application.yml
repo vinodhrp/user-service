@@ -1,12 +1,8 @@
----   
-#spring:
-  #profiles: cloud-register-io
-#eureka:
-  #instance:
-    #nonSecurePort: 80
-    #hostname: ${vcap.application.uris[0]}
-  #client:
-    #register-with-eureka: true
-    #fetch-registry: true
-    #service-url:
-      #defaultZone: ${vcap.services.eureka.credentials.url}
+spring:
+  application:
+    name: service-user-io
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: https://service-registry-io.cfapps.io/

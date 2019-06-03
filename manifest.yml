@@ -2,11 +2,8 @@
 applications:
 - name: service-user-io
   instances: 1
-  memory: 1GB
+  memory: 660m
   host: service-user-io
   path: target/user-service-0.0.1-SNAPSHOT.jar
-  #env:
-  #  spring.profiles.active: cloud-register-io
   services:
-  #- service-registry-io
-  - PERSONAL
+    - PERSONAL

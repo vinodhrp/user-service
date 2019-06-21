@@ -49,4 +49,63 @@ public class Address {
 	@JoinColumn(name = "USR_ID")
 	private UserDetail userDetail;
 
+	public Long getAddrsId() {
+		return addrsId;
+	}
+
+	public void setAddrsId(Long addrsId) {
+		this.addrsId = addrsId;
+	}
+
+	public String getStreetName() {
+		return streetName;
+	}
+
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
+
+	public String getStreetNo() {
+		return streetNo;
+	}
+
+	public void setStreetNo(String streetNo) {
+		this.streetNo = streetNo;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public UserDetail getUserDetail() {
+		return userDetail;
+	}
+
+	public void setUserDetail(UserDetail userDetail) {
+		this.userDetail = userDetail;
+	}
+	
+	
+	
+
 }
